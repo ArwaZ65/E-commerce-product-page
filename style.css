@@ -22,7 +22,7 @@ header {
     text-align: center;
     background-color: white;
     border-bottom: 0.8px solid rgba(182, 188, 200, 0.49);
-    width: 70rem;
+    width: 70%;
     margin: 0 auto;
     align-items: center;
 }
@@ -157,6 +157,7 @@ footer {
     text-align: center;
     background-color: #eee;
     color: gray;
+    width: 100%;
 }
 .main{
     display: flex;

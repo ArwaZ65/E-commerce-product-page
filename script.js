@@ -40,12 +40,16 @@ function Imagedisplay(imageElement) {
     // Append the new image to the display div
     displayDiv.appendChild(Imagedisplay);
 }
-function visiblecart() {
-    var displayDiv = document.getElementById('displaycart');
-    if (displayDiv.style.visibility === 'hidden' || displayDiv.style.visibility === '') {
-        displayDiv.style.visibility = 'visible';
-    } else {
-        displayDiv.style.visibility = 'hidden';
-    }
+// function visiblecart() {
+//     var displayDiv = document.getElementById('displaycart');
+//     if (displayDiv.style.visibility === 'hidden' || displayDiv.style.visibility === '') {
+//         displayDiv.style.visibility = 'visible';
+//     } else {
+//         displayDiv.style.visibility = 'hidden';
+//     }
 
+// }
+function toggleMenu() {
+    const navLinks = document.getElementById('links');
+    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
 }

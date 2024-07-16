@@ -6,6 +6,7 @@
 
 body {
     position: relative;
+    display: grid;
 }
 
 .container {
@@ -15,31 +16,38 @@ body {
         'article article '
         'footer footer'
     ;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 header {
     grid-area: header;
-    text-align: center;
     background-color: white;
     border-bottom: 0.8px solid rgba(182, 188, 200, 0.49);
-    width: 70%;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    position: relative;
 }
 
 nav {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
 }
 
 header>nav>.logo {
     display: flex;
-    justify-content: flex-start;
-    margin-left: 3rem;
+    justify-content: center;
+    /* margin-left: 3rem; */
 }
 
 header>nav>.logo>img {
-    width: 40%;
+    width: 15%;
     opacity: 0.8;
 }
 header>nav>.logo>img:hover{
@@ -48,13 +56,13 @@ header>nav>.logo>img:hover{
 }
 .nav-links {
     list-style: none;
-    height: 60%;
+    /* height: 60%; */
     display: flex;
-    align-self: center;
+    /* align-self: center; */
     gap: 3rem;
     box-sizing: border-box;
     align-items: center;
-    margin-right: 24rem;
+    /* margin-right: 20rem; */
 
 
 }
@@ -83,14 +91,17 @@ header>nav>.logo>img:hover{
     cursor: pointer;
     opacity: 0.5;
 }
-.navcart{
+.navcart,.hamburger-menu{
     color: grey;
-    position: relative;
-    top: 2em;
-    right: 5em;
+    display: none;
     opacity: 0.7;
 }
 .navcart:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+.hamburger-menu:hover{
+    display: block;
     cursor: pointer;
     opacity: 1;
 }
@@ -100,7 +111,7 @@ header>nav>.logo>img:hover{
     width:19rem;
     height: 10rem;
    position: relative;
-   left: 75rem;
+   /* left: 75rem; */
    /* top: 1rem; */
    border-radius: 1rem;
    padding:0.8rem;
@@ -146,9 +157,13 @@ header>nav>.logo>img:hover{
 }
 
 article {
+
     grid-area: article;
-    height: 80vb;
-    /* background-color: burlywood; */
+    /* height: 80vb; */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    
 }
 
 footer {
@@ -160,36 +175,49 @@ footer {
     width: 100%;
 }
 .main{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+.togmenu{
+    position: absolute;
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    
+    
+    
+    /* left: 30rem; */
 }
 .boximg{
     margin: 0 auto;
     /* padding-top: 7rem; */
 }
 .boximg>#displayimg>img{
-    height: 40vb;
-    /* width: 100%; */
-    margin-left: 250px;
-    margin-bottom: 20px;
-    border-radius: 3rem;
+    border-radius: 3rem; 
+    width: 100%;
+    max-width: 350px;
+    /* margin-left: 8rem; */
     
 }
 .images{
     display: flex;
     flex-direction: row;
-    align-self: flex-end;
-    align-items: center;
-    padding-left: 13rem;
+    /* padding-left: 7.5rem; */
     padding-top: 2rem;
-    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     
 }
 .images>.thumb-img>img{
 
     height: 6rem;
-    margin: 0 auto;
     border-radius: 1em;
+    width: 100%;
 }
 .images>.thumb-img>img:hover{
     opacity: 0.6;
@@ -197,14 +225,9 @@ footer {
     border: 2px solid red;
 }
 .info{
-    /* display: flex;
-    flex-direction: column;
-    align-self: flex-end; */
-    /* padding: 80px 110px 20px 30px; */
     margin: 0 auto;
-    align-self: center;
-    padding: 0px 120px 0px 20px;
-    margin-bottom: 5rem;
+    margin-left: 5rem;
+    padding: 20px;
     
 }
 .info>.title{
@@ -229,4 +252,27 @@ footer {
     padding: 15px;
     text-decoration: line-through;
     color: grey;
+}
+@media (min-width: 768px) {
+    article {
+        flex-direction: row;
+    }
+    
+    .main {
+        flex-direction: row;
+    }
+    
+    .info {
+        text-align: left;
+        padding: 20px 40px;
+    }
+}
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none;
+    }
+    
+    nav .hamburger-menu {
+        display: block;
+    }
 }

@@ -37,20 +37,19 @@ nav {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    position: relative;
-}
-
-header>nav>.logo {
-    display: flex;
+    /* position: relative; */
     justify-content: center;
-    /* margin-left: 3rem; */
 }
 
-header>nav>.logo>img {
-    width: 15%;
+header>.logo>img {
+    display: flex;
+    width: 100%;
+    max-width: 60px;
+    /* min-width: 40px; */
     opacity: 0.8;
+    margin-left: 1.2rem;
 }
-header>nav>.logo>img:hover{
+header>.logo>img:hover{
     opacity: 1;
     cursor: pointer;
 }
@@ -58,11 +57,11 @@ header>nav>.logo>img:hover{
     list-style: none;
     /* height: 60%; */
     display: flex;
-    /* align-self: center; */
+    align-self: center;
     gap: 3rem;
     box-sizing: border-box;
     align-items: center;
-    /* margin-right: 20rem; */
+    margin-right: 35rem;
 
 
 }
@@ -101,7 +100,7 @@ header>nav>.logo>img:hover{
     opacity: 1;
 }
 .hamburger-menu:hover{
-    display: block;
+    /* display: block; */
     cursor: pointer;
     opacity: 1;
 }
@@ -187,19 +186,19 @@ footer {
     display: flex;
     align-self: center;
     flex-direction: row;
-    
-    
-    
-    /* left: 30rem; */
+    /* transform: translateX(80rem); */
 }
+
 .boximg{
     margin: 0 auto;
     /* padding-top: 7rem; */
 }
+.boximg>#displayimg{
+    max-width:300px ;
+}
 .boximg>#displayimg>img{
     border-radius: 3rem; 
     width: 100%;
-    max-width: 350px;
     /* margin-left: 8rem; */
     
 }
@@ -266,7 +265,11 @@ footer {
         text-align: left;
         padding: 20px 40px;
     }
+    .boximg>#displayimg>img{
+        max-width: 400px;
+    }
 }
+
 @media (max-width: 768px) {
     nav .nav-links {
         display: none;
@@ -275,4 +278,20 @@ footer {
     nav .hamburger-menu {
         display: block;
     }
+    nav .logo{
+        display: block;
+    }
+}
+@media (max-width: 90em) {
+    html {
+        font-size: 85%;
+    }
+    .boximg>#displayimg>img{
+        min-width: 200px;
+    }
+    .boximg{
+        margin-top: 3rem;
+        margin-left: 3rem;
+    }
+
 }
